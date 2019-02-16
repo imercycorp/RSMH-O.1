@@ -1,4 +1,5 @@
 class Servo:
+    
     clockRate = 120
     def __init__(self, nexus, addr, angle):
         self.nexus = nexus
