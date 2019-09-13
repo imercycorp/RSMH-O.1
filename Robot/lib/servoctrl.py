@@ -3,7 +3,6 @@ import math
 
 
 class ServoCtrl( PCA9685 ):
-    """ Servo Controleur - Allow you to control the servo 0 to 15 on the PCA9685 PWM Driver """
     def __init__(self, i2c, address=0x40, freq=50, min_us=600, max_us=2400,
                  degrees=180):
         PCA9685.__init__( self, i2c=i2c, address=address)
@@ -13,7 +12,6 @@ class ServoCtrl( PCA9685 ):
         self.max_duty = self._us2duty(max_us)
         self.degrees = degrees
         
-        # Init the freq on PCA9685
         self.freq(freq)
 
     def _us2duty(self, value):

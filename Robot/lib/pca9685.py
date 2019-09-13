@@ -25,7 +25,7 @@ class PCA9685:
         self._write(0x00, (old_mode & 0x7F) | 0x10) # Mode 1, sleep
         self._write(0xfe, prescale) # Prescale
         self._write(0x00, old_mode) # Mode 1
-        time.sleep_us(5)
+        time.sleep_ms(50)
         self._write(0x00, old_mode | 0xa1) # Mode 1, autoincrement on
 
     def pwm(self, index, on=None, off=None):
